@@ -1,3 +1,5 @@
+<?php
+
 # 課題の回答は このファイル をご利用下さい。
 # 回答の出力を確認される際は，「php task.php」をターミナルから実行して下さい。
 
@@ -5,6 +7,8 @@ print("#####q1#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
+  $names[] = "斎藤";
+  print_r($names);
 
 echo PHP_EOL;
 
@@ -13,13 +17,30 @@ $array1 = ["dog", "cat", "fish"];
 $array2 = ["bird", "bat", "tiger"];
 
   # 以下に回答を記載
-
+  $array3 = array_merge($array1, $array2);
+  print_r($array3);
+  
 echo PHP_EOL;
 
 print("#####q3#####".PHP_EOL);
 $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
 
-  # 以下に回答を記載
+  # 以下に回答を記載 (array_coutnt_values 使用)
+  // $count = array_count_values($numbers);
+  // echo $count[3]."回";
+
+// echo PHP_EOL;
+
+  # 以下に回答を記載 (foreach 使用)
+  $count_3 = 0;
+
+  foreach($numbers as $number) {
+    if($number == 3) {
+      $count_3++;
+    }
+  }
+
+  echo $count_3."回";
 
 echo PHP_EOL;
 
@@ -205,3 +226,5 @@ foreach($humans as $human){
 }
 
 echo PHP_EOL;
+
+?>
