@@ -95,6 +95,7 @@ print("#####q6#####".PHP_EOL);
 $numbers1 = [1, 2, 3, 4, 5];
 
   # 以下に回答を記載
+  $numbers2 = [];
 
   foreach($numbers1 as $number1) {
     $numbers2[] = $number1 * 10;
@@ -129,33 +130,88 @@ print_r($upper_case_programming_languages);
 
 echo PHP_EOL;
 
-// print("#####q9#####".PHP_EOL);
-// $names = ["田中", "佐藤", "佐々木", "高橋"];
+print("#####q9#####".PHP_EOL);
+$names = ["田中", "佐藤", "佐々木", "高橋"];
 
-//   # 以下に回答を記載
+  # 以下に回答を記載
+
+  $number = 1;
+  $names_add_number = [];
+
+  foreach($names as $name) {
+    $names_add_number[] = "会員No.".$number." ".$name;
+    $number++;
+  }
+
+  print_r($names_add_number);
+
+echo PHP_EOL;
+
+print("#####q10#####".PHP_EOL);
+$foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
+
+  # 以下に回答を記載
+  // 下記(1), (2)の内, 処理速度の観点から(1)で回答。  
+
+// (1) strpos関数を使用
+  foreach($foods as $food) {
+    if(strpos($food,"うに") === false) {
+      echo "まぁまぁ好きです".PHP_EOL;
+    } else {
+      echo "好物です".PHP_EOL;
+    }
+  }
+
+echo PHP_EOL;
+
+// (2) 正規表現を使用
+// foreach($foods as $food) {
+//   if(preg_match("/うに/",$food)) {
+//     echo "好物です".PHP_EOL;
+//   } else {
+//     echo "まぁまぁ好きです".PHP_EOL;
+//   }
+// }
 
 // echo PHP_EOL;
 
-// print("#####q10#####".PHP_EOL);
-// $foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
+print("#####q11#####".PHP_EOL);
+$sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
 
-//   # 以下に回答を記載
+  # 以下に回答を記載
 
-// echo PHP_EOL;
+  $sports_all = [];
 
-// print("#####q11#####".PHP_EOL);
-// $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
+  foreach($sports as $sport1) {
+    if(is_array($sport1)) {
+      foreach($sport1 as $sport2) {
+      $sports_all[] = $sport2;
+      }
+    } else {
+      $sports_all[] = $sport1;
+    }
+  }
 
-//   # 以下に回答を記載
+  echo "ユーザーの趣味一覧".PHP_EOL;
 
-// echo PHP_EOL;
+  $sports_hobby = array_unique($sports_all);
+  $number = 1;
 
-// print("#####q12#####".PHP_EOL);
-// $data = ["user" => ["name" => "satou", "age" => 33]];
+  foreach($sports_hobby as $sport_hobby) {
+    echo "No{$number} {$sport_hobby}".PHP_EOL;
+    $number++;
+  }
 
-//   # 以下に回答を記載
+echo PHP_EOL;
 
-// echo PHP_EOL;
+print("#####q12#####".PHP_EOL);
+$data = ["user" => ["name" => "satou", "age" => 33]];
+
+  # 以下に回答を記載
+
+  echo $data["user"]["name"];
+
+echo PHP_EOL;
 
 // print("#####q13#####".PHP_EOL);
 // $user_data = ["name" => "神里", "age" => 31, "address" => "埼玉"];
