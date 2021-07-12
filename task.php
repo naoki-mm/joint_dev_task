@@ -213,40 +213,64 @@ $data = ["user" => ["name" => "satou", "age" => 33]];
 
 echo PHP_EOL;
 
-// print("#####q13#####".PHP_EOL);
-// $user_data = ["name" => "神里", "age" => 31, "address" => "埼玉"];
-// $update_data = ["age" => 32, "address" => "沖縄"];
+print("#####q13#####".PHP_EOL);
+$user_data = ["name" => "神里", "age" => 31, "address" => "埼玉"];
+$update_data = ["age" => 32, "address" => "沖縄"];
 
-//   # 以下に回答を記載
+  # 以下に回答を記載
 
-// echo PHP_EOL;
+  $user_data = array_merge($user_data,$update_data);
+  print_r($user_data);
 
-// print("#####q14#####".PHP_EOL);
-// $data = ["name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com"];
+echo PHP_EOL;
 
-//   # 以下に回答を記載
+print("#####q14#####".PHP_EOL);
+$data = ["name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com"];
 
-// echo PHP_EOL;
+  # 以下に回答を記載
 
-// print("#####q15#####".PHP_EOL);
-// $data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
-// $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
+  $data_index = [];
 
-//   # 以下に回答を記載
+  $data_index = array_values($data);
+  print_r($data_index);
 
-// echo PHP_EOL;
+echo PHP_EOL;
 
-// print("#####q16#####".PHP_EOL);
-// $users = [
-//   ["name" => "satou", "age" => 22],
-//   ["name" => "yamada", "age" => 12],
-//   ["name" => "takahashi", "age" => 32],
-//   ["name" => "nakamura", "age" => 41]
-// ];
+print("#####q15#####".PHP_EOL);
+$data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
+$data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 
-//   # 以下に回答を記載
+  # 以下に回答を記載
+  if(array_key_exists("age",$data1)) {
+    echo "OK".PHP_EOL;
+  } else {
+    echo "NG".PHP_EOL;
+  }
 
-// echo PHP_EOL;
+  if(array_key_exists("age",$data2)) {
+    echo "OK".PHP_EOL;
+  } else {
+    echo "NG".PHP_EOL;
+  }
+
+
+echo PHP_EOL;
+
+print("#####q16#####".PHP_EOL);
+$users = [
+  ["name" => "satou", "age" => 22],
+  ["name" => "yamada", "age" => 12],
+  ["name" => "takahashi", "age" => 32],
+  ["name" => "nakamura", "age" => 41]
+];
+
+  # 以下に回答を記載
+
+  foreach($users as $user) {
+    echo "「私の名前は{$user["name"]}です。年齢は{$user["age"]}歳です。」".PHP_EOL;
+  }
+
+echo PHP_EOL;
 
 // print("#####q17#####".PHP_EOL);
 // class User
